@@ -1,4 +1,4 @@
 package techproed.pages;
 
-public class HomePage {
+public class FirstPage {
 }
