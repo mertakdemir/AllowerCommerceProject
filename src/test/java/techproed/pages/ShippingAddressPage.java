@@ -34,7 +34,7 @@ public class ShippingAddressPage {
     @FindBy(id = "shipping_city")
     public WebElement cityInput;
 
-    @FindBy(id = "shipping_state")
+    @FindBy(xpath = "//select[@id='shipping_state']")
     public WebElement stateDropdown;
 
     @FindBy(id = "shipping_postcode")

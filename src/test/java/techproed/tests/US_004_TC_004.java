@@ -3,7 +3,6 @@ package techproed.tests;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.json.Json;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -17,9 +16,9 @@ import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
 import techproed.utilities.ReusableMethods;
 
-public class US_004_TC_001 {
-    //User should add be able to Shipping Adress.
-    // (My Account > Addresses > Shipping Address)
+import java.io.IOException;
+
+public class US_004_TC_004 {
 
     HomePage homePage;
     SignInPage signInPage;
@@ -45,13 +44,13 @@ public class US_004_TC_001 {
     }
 
     @Test
-    public void US_004_TC_001(){
+    public void US_004_TC_002() throws IOException {
+
         homePage = new HomePage();
         signInPage = new SignInPage();
         myAccountPage = new MyAccountPage();
         shippingAddressPage = new ShippingAddressPage();
 
-        //Sign In
         register();
 
         //User clicks on My Account button
@@ -65,18 +64,26 @@ public class US_004_TC_001 {
         //User click on "Add" for shipping address
         myAccountPage.addShippingAddressButton.click();
 
-        //User fills the required parts
-        Actions actions = new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(1);
+        //User enters first name
         shippingAddressPage.firstNameInput.sendKeys(faker.name().firstName());
-        shippingAddressPage.lastNameInput.sendKeys(faker.name().lastName());
+        //User enters invalid Last name
+        shippingAddressPage.lastNameInput.sendKeys(faker.number().digit());
+        ReusableMethods.getScreenshot("Invalid Last name");
+        ReusableMethods.waitFor(3);
+
+        Actions actions = new Actions(Driver.getDriver());
         shippingAddressPage.companyNameInput.sendKeys(faker.company().name());
+        ReusableMethods.waitFor(1);
         Select countryDD = new Select(shippingAddressPage.countryDropdown);
         countryDD.selectByVisibleText("South Africa");
+        ReusableMethods.waitFor(1);
         shippingAddressPage.adressHouseNumberAndStreetNameInput.sendKeys(faker.address().streetName());
+        ReusableMethods.waitFor(1);
         shippingAddressPage.addressApartmentOrSuiteInput.sendKeys(faker.address().buildingNumber());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
         shippingAddressPage.cityInput.sendKeys(faker.address().cityName());
+        ReusableMethods.waitFor(1);
         try {
             Select stateDD = new Select(shippingAddressPage.stateDropdown);
             stateDD.selectByVisibleText("Limpopo");
@@ -85,22 +92,19 @@ public class US_004_TC_001 {
         }
         try{
             shippingAddressPage.zipCodeInput.sendKeys("12345");
-        }catch (Exception ignored){
+        }catch (Exception ignored) {
 
         }
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);
+        ReusableMethods.waitFor(3);
 
         //Verify that user has been registered
-        Assert.assertTrue(shippingAddressPage.editYourShippingAddressText.isDisplayed());
-
-
+        Assert.assertFalse(shippingAddressPage.editYourShippingAddressText.isDisplayed());
     }
 
-    @AfterMethod
+   @AfterMethod
     public void tearDown(){
         Driver.closeDriver();
     }
-
-
 }
