@@ -12,8 +12,9 @@
       </list>
     </option>
   </component>
-<<<<<<< HEAD
+
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+  </component>
 =======
 
   <component name="ProjectRootManager" version="2" languageLevel="JDK_19" default="true" project-jdk-name="openjdk-19" project-jdk-type="JavaSDK">
@@ -23,7 +24,7 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">=======
 
     >>>>>>> master
-<<<<<<< HEAD
+
 >>>>>>> 0ad91c19bc053a4c3cccc569dc04f5cd99a99940
 =======
 >>>>>>> master
