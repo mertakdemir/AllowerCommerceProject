@@ -19,20 +19,9 @@ public class US_007_TC_001 {
         WebDriver driver=new ChromeDriver();
         driver.get("https://allovercommerce.com/");
 
-        // click on select button
-       // driver.findElement();
 
-       // Select 4 products
-       // WebElement element = driver.findElement(By.xpath("//*[@id=\"product-15096\"]/div[2]/div/form/div/div/div/button"));
-       // Select select = new Select(element);
-       // select.selectByValue("");
-
-       List<WebElement> elements = driver.findElements(By.xpath("//*[@id=\"product-15096\"]/div[2]/div/form/div/div/div/button"));
-
-        for (int i =0; i<5; i++){
-            elements.get(i).click();
         }
 
     }
 
-}
+
