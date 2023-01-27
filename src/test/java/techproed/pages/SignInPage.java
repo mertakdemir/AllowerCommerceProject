@@ -6,16 +6,28 @@ import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
 public class SignInPage {
+
+
+
+
     public SignInPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//input[@name='username'][1]")
+    @FindBy(id = "reg_username")
     public WebElement username;
 
-    @FindBy(xpath = "//input[@name='password'][1]")
+    @FindBy(id = "reg_email")
+    public WebElement email;
+
+    @FindBy(id = "reg_password")
     public WebElement password;
 
-    @FindBy(xpath = "//button[@name='login']")
-    public WebElement signInButton2;
+    @FindBy(id = "register-policy")
+    public WebElement agreeThePolicy;
+
+    @FindBy(xpath = "//button[.='Sign Up']")
+    public WebElement signUpButton;
+
+
 }
