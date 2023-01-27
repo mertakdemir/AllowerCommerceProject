@@ -5,11 +5,13 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import techproed.utilities.Driver;
 
-public class HomePage {
-    public HomePage(){
+public class MyAccountPage {
+    public MyAccountPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(xpath = "//span[.='Sign In']")
-    public WebElement signInButton1;
+    @FindBy (xpath = "//h4[.='Account Details']")
+    public WebElement title;
+
+
 }
