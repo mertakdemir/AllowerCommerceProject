@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class US_001_TC_001_Register_Page_Test {
 
-US_001_TC_001_Home_Page us_001_tc_001_home_page;
+    US_001_TC_001_Home_Page us_001_tc_001_home_page;
     US_001_TC_001_Register_Page us_001_tc_001_register_page;
     Faker faker;
     @Test
@@ -23,18 +23,18 @@ US_001_TC_001_Home_Page us_001_tc_001_home_page;
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
     //User should click register button.
-        us_001_tc_001_home_page =new US_001_TC_001_Home_Page();
-        us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
-        faker = new Faker();
+     // us_001_tc_001_home_page =new US_001_TC_001_Home_Page();
+     // us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
+      faker = new Faker();
 
-        us_001_tc_001_home_page.homePageRegisterButton.click();
+      us_001_tc_001_home_page.homePageRegisterButton.click();
 
     //User should enter username.
-        us_001_tc_001_register_page.userName.sendKeys("fakeusername");
+        us_001_tc_001_register_page.userName.sendKeys( faker.name().username());
         ReusableMethods.waitFor(2);
-        us_001_tc_001_register_page.yourEmailAddress.sendKeys("fake@allovercommerce.com");
+        us_001_tc_001_register_page.yourEmailAddress.sendKeys(faker.internet().emailAddress());
         ReusableMethods.waitFor(2);
-        us_001_tc_001_register_page.password.sendKeys("fakepass");
+        us_001_tc_001_register_page.password.sendKeys(faker.number().digits(8));
         ReusableMethods.waitFor(2);
         //us_001_tc_001_register_page.checkBoxPolicy.click();
         us_001_tc_001_register_page.SignUpButton.click();
