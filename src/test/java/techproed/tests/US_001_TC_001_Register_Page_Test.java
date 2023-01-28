@@ -3,7 +3,7 @@ package techproed.tests;
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
 import techproed.pages.HomePage;
-import techproed.pages.US_001_TC_001_Register_Page;
+import techproed.pages.Register_Page;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
@@ -13,7 +13,7 @@ import java.io.IOException;
 public class US_001_TC_001_Register_Page_Test {
 
     HomePage homePage;
-    US_001_TC_001_Register_Page us_001_tc_001_register_page;
+    Register_Page register_page;
     Faker faker;
     @Test
     public void US_001_TC_001_Register_Page_Test() throws IOException {
@@ -24,21 +24,21 @@ public class US_001_TC_001_Register_Page_Test {
 
     //User should click register button.
       homePage = new HomePage();
-      us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
+      register_page = new Register_Page();
       faker = new Faker();
 
       homePage.registerButton.click();
 
     //User should enter username.
-        us_001_tc_001_register_page.userName.sendKeys( faker.name().username());
+        register_page.userName.sendKeys( faker.name().username());
         ReusableMethods.waitFor(2);
-        us_001_tc_001_register_page.yourEmailAddress.sendKeys(faker.internet().emailAddress());
+        register_page.yourEmailAddress.sendKeys(faker.internet().emailAddress());
         ReusableMethods.waitFor(2);
-        us_001_tc_001_register_page.password.sendKeys(faker.number().digits(8));
+        register_page.password.sendKeys(faker.number().digits(8));
         ReusableMethods.waitFor(2);
-        us_001_tc_001_register_page.checkBoxPolicy.click();
-        us_001_tc_001_register_page.SignUpButton.click();
-        ReusableMethods.getScreenshot("user could not sign up without clicking policy check box" + us_001_tc_001_register_page.SignUpButton);
+        register_page.checkBoxPolicy.click();
+        register_page.SignUpButton.click();
+        ReusableMethods.getScreenshot("user could not sign up without clicking policy check box" + register_page.SignUpButton);
 
 
 }
