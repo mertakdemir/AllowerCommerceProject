@@ -2,7 +2,7 @@ package techproed.tests;
 
 import com.github.javafaker.Faker;
 import org.testng.annotations.Test;
-import techproed.pages.US_001_TC_001_Home_Page;
+import techproed.pages.HomePage;
 import techproed.pages.US_001_TC_001_Register_Page;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
@@ -12,7 +12,7 @@ import java.io.IOException;
 
 public class US_001_TC_001_Register_Page_Test {
 
-    US_001_TC_001_Home_Page us_001_tc_001_home_page;
+    HomePage homePage;
     US_001_TC_001_Register_Page us_001_tc_001_register_page;
     Faker faker;
     @Test
@@ -23,11 +23,11 @@ public class US_001_TC_001_Register_Page_Test {
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
     //User should click register button.
-      us_001_tc_001_home_page =new US_001_TC_001_Home_Page();
+      homePage = new HomePage();
       us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
       faker = new Faker();
 
-      us_001_tc_001_home_page.homePageRegisterButton.click();
+      homePage.registerButton.click();
 
     //User should enter username.
         us_001_tc_001_register_page.userName.sendKeys( faker.name().username());
