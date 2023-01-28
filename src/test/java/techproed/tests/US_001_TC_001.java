@@ -10,7 +10,7 @@ import techproed.utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class US_001_TC_001_Register_Page_Test {
+public class US_001_TC_001 {
 
     HomePage homePage;
     Register_Page register_page;
