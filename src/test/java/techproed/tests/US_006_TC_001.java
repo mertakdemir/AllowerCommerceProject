@@ -11,7 +11,7 @@ import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
 
-public class ProductTest {
+public class US_006_TC_001 {
 
         /*
             The user should be able to find the desired product in the search box.
