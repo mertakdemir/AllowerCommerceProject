@@ -23,8 +23,8 @@ public class US_001_TC_001_Register_Page_Test {
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
     //User should click register button.
-     // us_001_tc_001_home_page =new US_001_TC_001_Home_Page();
-     // us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
+      us_001_tc_001_home_page =new US_001_TC_001_Home_Page();
+      us_001_tc_001_register_page =new US_001_TC_001_Register_Page();
       faker = new Faker();
 
       us_001_tc_001_home_page.homePageRegisterButton.click();
@@ -36,7 +36,7 @@ public class US_001_TC_001_Register_Page_Test {
         ReusableMethods.waitFor(2);
         us_001_tc_001_register_page.password.sendKeys(faker.number().digits(8));
         ReusableMethods.waitFor(2);
-        //us_001_tc_001_register_page.checkBoxPolicy.click();
+        us_001_tc_001_register_page.checkBoxPolicy.click();
         us_001_tc_001_register_page.SignUpButton.click();
         ReusableMethods.getScreenshot("user could not sign up without clicking policy check box" + us_001_tc_001_register_page.SignUpButton);
 

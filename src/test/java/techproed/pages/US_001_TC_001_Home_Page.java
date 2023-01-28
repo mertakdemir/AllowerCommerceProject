@@ -11,6 +11,6 @@ public class US_001_TC_001_Home_Page {
 
         PageFactory.initElements(Driver.getDriver(),this);
     }
-    @FindBy(xpath = "//a[@class='register inline-type']")
+    @FindBy(xpath = "//span[.='Register']")
     public WebElement homePageRegisterButton;
 }
