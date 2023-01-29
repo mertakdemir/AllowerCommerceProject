@@ -3,7 +3,7 @@ package techproed.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import techproed.pages.SignUpPage;
+import techproed.pages.VendorSignUpPage;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.ReusableMethods;
@@ -11,8 +11,8 @@ import techproed.utilities.ReusableMethods;
 
 import static techproed.utilities.JSUtils.scrollIntoViewJS;
 
-public class US_009_TC_01_VendorSignUpTest extends SignUpPage{
-    SignUpPage signUpPage=new SignUpPage();
+public class US_009_TC_001 extends VendorSignUpPage {
+    VendorSignUpPage signUpPage=new VendorSignUpPage();
 
 
 
