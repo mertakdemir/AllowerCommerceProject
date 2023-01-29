@@ -19,15 +19,13 @@ public class MyAccountPage {
     }
 
 
-    @FindBy (xpath = "//h4[.='Account Details']")
-    public WebElement title;
-
-
-
     @FindBy(xpath = "//p[.='Addresses']")
     public WebElement addressesButton;
 
     @FindBy(xpath = "(//a[.='Add'])[2]")
     public WebElement addShippingAddressButton;
+
+    @FindBy(xpath = "//a[.='Account details']")
+    public WebElement accountDetailsButton;
 
 }
