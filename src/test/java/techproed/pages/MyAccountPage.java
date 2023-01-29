@@ -1,6 +1,9 @@
 package techproed.pages;
 
+
+
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -8,9 +11,13 @@ import techproed.utilities.Driver;
 
 public class MyAccountPage {
 
+
+
+
     public MyAccountPage(){
         PageFactory.initElements(Driver.getDriver(), this);
     }
+
 
     @FindBy(xpath = "//p[.='Addresses']")
     public WebElement addressesButton;
@@ -18,8 +25,13 @@ public class MyAccountPage {
     @FindBy(xpath = "(//a[.='Add'])[2]")
     public WebElement addShippingAddressButton;
 
+
+    @FindBy(xpath = "//a[.='Account details']")
+    public WebElement accountDetailsButton;
+
     @FindBy(xpath = "(//*[text()='Add'])[1]")
     public WebElement addBillingAddress;
+
 
 
 }
