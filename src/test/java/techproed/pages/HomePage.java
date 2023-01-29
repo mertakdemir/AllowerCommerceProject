@@ -21,6 +21,10 @@ public class HomePage {
     public WebElement myAccountButton;
 
 
+    @FindBy(xpath = "//*[text()='Sign Out']")
+    public WebElement signOut;
+
+
     }
 
 
