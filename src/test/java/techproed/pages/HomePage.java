@@ -30,8 +30,18 @@ public class HomePage {
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signInButton1;
 
+
+
+
+
+
     @FindBy(xpath = "//input[@aria-label='Search']")
     public WebElement searchBox;
+
+
+
+
+
 
     @FindBy(xpath = "//span[.='Register']")
     public WebElement registerButton;
@@ -40,11 +50,25 @@ public class HomePage {
     public WebElement myAccountButton;
 
 
+
+
+
+
+
+
+
+
+
+
+
     @FindBy(xpath = "//*[text()='Sign Out']")
     public WebElement signOut;
 
 
     }
+
+
+
 
 
 
