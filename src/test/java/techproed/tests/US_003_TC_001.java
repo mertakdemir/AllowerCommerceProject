@@ -33,6 +33,8 @@ public class US_003_TC_001 {
 
         homePage.registerButton.click();
         signInPage.username.sendKeys(faker.name().username());
+
+
         signInPage.email.sendKeys(faker.internet().emailAddress());
         signInPage.password.sendKeys(faker.internet().password());
         signInPage.agreeThePolicy.click();
@@ -69,7 +71,7 @@ public class US_003_TC_001 {
         try {
 
             Select country =new Select(billingAddressPage.countryOrRegion);
-            country.deselectByVisibleText("Brazil");
+            country.selectByVisibleText("South Africa");
         }catch (Exception ignored){
 
         }
@@ -80,7 +82,7 @@ public class US_003_TC_001 {
         try {
 
             Select  state =new Select(billingAddressPage.stateOrCountry);
-            state.deselectByVisibleText("Rio de Janerio");
+            state.selectByVisibleText("Limpopo");
 
         }catch (Exception ignored){
 
@@ -91,12 +93,13 @@ public class US_003_TC_001 {
         billingAddressPage.postcodeOrZipCode.sendKeys(faker.address().zipCode());
         billingAddressPage.phone.sendKeys(faker.phoneNumber().phoneNumber());
 
-        try {
-            billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
-        }catch (Exception ignored){
 
-        }
+
+
+
+         billingAddressPage.emailAddress.clear();
         billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
+
         JSUtils.clickElementByJS(billingAddressPage.saveAddressButton);
 
 
