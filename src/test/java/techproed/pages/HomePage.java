@@ -35,8 +35,14 @@ public class HomePage {
 
 
 
+
+
+
     @FindBy(xpath = "//input[@aria-label='Search']")
     public WebElement searchBox;
+
+
+
 
 
 
@@ -61,11 +67,16 @@ public class HomePage {
 
 
 
+
+
+
     @FindBy(xpath = "//*[text()='Sign Out']")
     public WebElement signOut;
 
 
     }
+
+
 
 
 
