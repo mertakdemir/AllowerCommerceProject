@@ -10,8 +10,5 @@
         <module name="testNGproject" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="testNGproject" target="11" />
-    </bytecodeTargetLevel>
   </component>
 </project>
