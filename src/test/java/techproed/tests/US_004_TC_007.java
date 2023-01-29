@@ -69,10 +69,13 @@ public class US_004_TC_007 {
         shippingAddressPage.firstNameInput.sendKeys(faker.name().firstName());
         //User enters Last name
         shippingAddressPage.lastNameInput.sendKeys(faker.name().lastName());
+
+        //User enters invalid company name
         shippingAddressPage.companyNameInput.sendKeys("!");
         ReusableMethods.waitFor(2);
         ReusableMethods.getScreenshot("Invalid company name");
         ReusableMethods.waitFor(1);
+
         Select countryDD = new Select(shippingAddressPage.countryDropdown);
         countryDD.selectByVisibleText("South Africa");
         ReusableMethods.waitFor(1);
@@ -89,11 +92,8 @@ public class US_004_TC_007 {
         }catch (Exception ignored){
 
         }
-        try{
-            shippingAddressPage.zipCodeInput.sendKeys("12345");
-        }catch (Exception ignored) {
 
-        }
+        shippingAddressPage.zipCodeInput.sendKeys("12345");
         ReusableMethods.waitFor(1);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);
         ReusableMethods.waitFor(3);
