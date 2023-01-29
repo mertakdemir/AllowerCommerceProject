@@ -25,7 +25,13 @@ public class MyAccountPage {
     @FindBy(xpath = "(//a[.='Add'])[2]")
     public WebElement addShippingAddressButton;
 
+
     @FindBy(xpath = "//a[.='Account details']")
     public WebElement accountDetailsButton;
+
+    @FindBy(xpath = "(//*[text()='Add'])[1]")
+    public WebElement addBillingAddress;
+
+
 
 }
