@@ -7,10 +7,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import techproed.pages.HomePage;
-import techproed.pages.MyAccountPage;
-import techproed.pages.ShippingAddressPage;
-import techproed.pages.SignInPage;
+import techproed.pages.*;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
@@ -21,32 +18,33 @@ import java.io.IOException;
 public class US_004_TC_018 {
 
     HomePage homePage;
-    SignInPage signInPage;
+    Register_Page register_page;
     MyAccountPage myAccountPage;
     ShippingAddressPage shippingAddressPage;
     Faker faker;
 
-    public void register() {
+
+    public void register(){
         homePage = new HomePage();
-        signInPage = new SignInPage();
+        register_page = new Register_Page();
         faker = new Faker();
 
         //User goes to home page
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
         homePage.registerButton.click();
-        signInPage.username.sendKeys(faker.name().username());
-        signInPage.email.sendKeys(faker.internet().emailAddress());
-        signInPage.password.sendKeys(faker.internet().password());
-        signInPage.agreeThePolicy.click();
-        signInPage.signUpButton.click();
+        register_page.userName.sendKeys(faker.name().username());
+        register_page.yourEmailAddress.sendKeys(faker.internet().emailAddress());
+        register_page.password.sendKeys(faker.internet().password());
+        register_page.checkBoxPolicy.click();
+        register_page.SignUpButton.click();
 
     }
 
     @Test
-    public void US_004_TC_001() throws IOException {
+    public void US_004_TC_018() throws IOException {
         homePage = new HomePage();
-        signInPage = new SignInPage();
+        register_page = new Register_Page();
         myAccountPage = new MyAccountPage();
         shippingAddressPage = new ShippingAddressPage();
 
