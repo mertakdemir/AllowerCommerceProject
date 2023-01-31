@@ -14,8 +14,8 @@ public class SignInPage {
         PageFactory.initElements(Driver.getDriver(), this);
     }
 
-    @FindBy(id = "reg_username") //It supposed to be on register page, because there is no option as "username" in sign in part.
-    public WebElement username;  //But DO NOT TOUCH IT. Because it will affect the whole project.
+    @FindBy(id = "reg_username")
+    public WebElement username;
 
     @FindBy(id = "reg_email")
     public WebElement email;
@@ -26,8 +26,8 @@ public class SignInPage {
     @FindBy(id = "register-policy")
     public WebElement agreeThePolicy;
 
-    @FindBy(xpath = "//button[.='Sign Up']")//It supposed to be on register page, because there is no option as "signUp" in sign in part.
-    public WebElement signUpButton;//But DO NOT TOUCH IT. Because it will affect the whole project.
+    @FindBy(xpath = "//button[.='Sign Up']")
+    public WebElement signUpButton;
 
 
 
