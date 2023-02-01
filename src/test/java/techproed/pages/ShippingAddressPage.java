@@ -46,5 +46,27 @@ public class ShippingAddressPage {
     @FindBy(xpath = "//a[.='Edit Your Shipping Address']")
     public WebElement editYourShippingAddressText;
 
+    @FindBy(xpath = "//li[@data-id='shipping_first_name']")
+    public WebElement warningForFirstName;
+
+    @FindBy(xpath = "//li[@data-id='shipping_last_name']")
+    public WebElement warningForLastName;
+
+    @FindBy(xpath = "//li[@data-id='shipping_address_1']")
+    public WebElement warningForStreetName;
+
+    @FindBy(xpath = "//li[@data-id='shipping_city']")
+    public WebElement warningForCityName;
+
+    @FindBy(xpath = "//li[@data-id='shipping_postcode']")
+    public WebElement warningForZipCode;
+
+
+
+
+
+
+
+
 
 }
