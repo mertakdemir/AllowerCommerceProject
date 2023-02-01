@@ -10,6 +10,7 @@ import techproed.pages.*;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
+import techproed.utilities.ReusableMethods;
 
 public class US_003_TC_001 {
 
@@ -18,33 +19,31 @@ public class US_003_TC_001 {
 
 
     HomePage homePage;
-    SignInPage signInPage;
     MyAccountPage myAccountPage;
     BillingAddressPage billingAddressPage;
     Faker faker;
-
+  Register_Page registerPage;
     public void register(){
         homePage = new HomePage();
-        signInPage = new SignInPage();
-        faker = new Faker();
 
+        faker = new Faker();
+        registerPage =new Register_Page();
         //User goes to home page
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
         homePage.registerButton.click();
-        signInPage.username.sendKeys(faker.name().username());
+        registerPage.userName.sendKeys(faker.name().username());
 
+        registerPage.yourEmailAddress.sendKeys(faker.internet().emailAddress());
+        registerPage.password.sendKeys(faker.internet().password());
+        registerPage.checkBoxPolicy.click();
+        registerPage.SignUpButton.click();
 
-        signInPage.email.sendKeys(faker.internet().emailAddress());
-        signInPage.password.sendKeys(faker.internet().password());
-        signInPage.agreeThePolicy.click();
-        signInPage.signUpButton.click();
 
     }
     @Test
     public void US_003_TC_001() {
         homePage = new HomePage();
-        signInPage = new SignInPage();
         myAccountPage = new MyAccountPage();
         billingAddressPage = new BillingAddressPage();
 
@@ -68,10 +67,13 @@ public class US_003_TC_001 {
         billingAddressPage.firstName.sendKeys(faker.address().firstName());
         billingAddressPage.lastName.sendKeys(faker.address().lastName());
 
+        
+
         try {
 
             Select country =new Select(billingAddressPage.countryOrRegion);
             country.selectByVisibleText("South Africa");
+
         }catch (Exception ignored){
 
         }

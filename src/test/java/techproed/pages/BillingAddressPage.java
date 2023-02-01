@@ -20,7 +20,7 @@ public class BillingAddressPage {
     @FindBy(xpath = "//input[@id='billing_last_name']")
     public WebElement lastName;
 
-    @FindBy(xpath = "(//*[text()='Select a country / region…'])[2]")
+    @FindBy(xpath = "(//*[text()='Select a country / region…'])[1]")
     public WebElement countryOrRegion;
 
 
