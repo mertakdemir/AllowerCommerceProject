@@ -76,4 +76,7 @@ public class MyAccountPage {
     @FindBy(xpath = "//a[.='Logout']")
     public WebElement logoutDashboard;
 
+    @FindBy(xpath = "//*[.='Sign Out']")
+    public WebElement signOutButton;
+
 }
