@@ -35,6 +35,7 @@ public class US_003_TC_001 {
         registerPage.userName.sendKeys(faker.name().username());
 
         registerPage.yourEmailAddress.sendKeys(faker.internet().emailAddress());
+        ReusableMethods.waitFor(3);
         registerPage.password.sendKeys(faker.internet().password());
         registerPage.checkBoxPolicy.click();
         registerPage.SignUpButton.click();
@@ -99,8 +100,8 @@ public class US_003_TC_001 {
 
 
 
-         billingAddressPage.emailAddress.clear();
-        billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
+//         billingAddressPage.emailAddress.clear();
+//        billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
 
         JSUtils.clickElementByJS(billingAddressPage.saveAddressButton);
 

@@ -27,4 +27,9 @@ public class Register_Page {
     @FindBy(name = "register")
     public WebElement SignUpButton;
 
+
+
+
+
+
 }
