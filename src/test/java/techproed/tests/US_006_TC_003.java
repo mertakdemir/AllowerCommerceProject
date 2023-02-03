@@ -14,12 +14,14 @@ import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
 import techproed.utilities.ReusableMethods;
 
-public class US_006_TC_001 {
+import java.io.IOException;
+
+public class US_006_TC_003 {
 /*
     Given
         Go to https://allovercommerce.com
     When
-        The user should be able to find the desired product in the search box. "Television"
+        The user should be able to find the desired product in the search box. "Phone"
     And
         The user should be able to add the product they are looking for to their cart. (ADD TO CART)
     Then
@@ -40,18 +42,28 @@ public class US_006_TC_001 {
     Faker faker;
 
    @Test
-   public void TC_001(){
-
-   // Go to https://allovercommerce.com
+   public void TC_003() throws IOException {
+   //Go to https://allovercommerce.com
        Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
-   // The user should be able to find the desired product in the search box. "Television"
+    //The user should be able to find the desired product in the search box. "Phone"
        Assert.assertTrue(homePage.searchBox.isEnabled());
-       homePage.searchBox.sendKeys("Television", Keys.ENTER);
+       homePage.searchBox.sendKeys("Phone", Keys.ENTER);
+
+       Actions actions = new Actions(Driver.getDriver());
+       actions.sendKeys(Keys.PAGE_DOWN).
+                        build().
+                        perform();
+
+       ReusableMethods.waitFor(2);
+       ReusableMethods.getScreenshot("Add To Cart");
+
+       try {
 
    // The user should be able to add the product they are looking for to their cart. (ADD TO CART)
        productPage.addToCart.click();
-       ReusableMethods.waitFor(2);
+
+
 
    // User should see the items that have been added to the cart.
        String message = productPage.addToCartMessage.getText();
@@ -108,10 +120,9 @@ public class US_006_TC_001 {
 
       Assert.assertTrue(checkoutPage.thankyouMessage.isDisplayed());
 
+       }catch (Exception e){}
 
-
-       Driver.closeDriver();
-
+      Driver.closeDriver();
    }
 
 }

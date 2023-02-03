@@ -20,6 +20,11 @@ public class ProductPage {
     @FindBy(xpath = "//a[@class='btn btn-success btn-md']")
     public WebElement viewCart;
 
+    @FindBy(xpath = "//li[@class='no-product']")
+    public WebElement noProductMessage;
+
+
+
 
 
 
