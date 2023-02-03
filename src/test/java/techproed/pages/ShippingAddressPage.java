@@ -47,4 +47,19 @@ public class ShippingAddressPage {
     public WebElement editYourShippingAddressText;
 
 
+    //=============zeynep=============
+
+
+    @FindBy(xpath = "(//input[@type='text'])[7]")
+    public WebElement stateInput;
+
+    @FindBy(xpath = "//div/*[text()='Edit Your Shipping Address']")
+    public WebElement editShippingAddress;
+
+
+
+
+
+
+
 }

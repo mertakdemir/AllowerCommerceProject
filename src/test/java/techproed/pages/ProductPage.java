@@ -20,26 +20,6 @@ public class ProductPage {
     @FindBy(xpath = "//a[@class='btn btn-success btn-md']")
     public WebElement viewCart;
 
-    @FindBy(xpath = "//a[.='Shopping Cart']")
-    public WebElement shoppingCart;
-
-    @FindBy(xpath = "//span[@class='cart-count']")
-    public WebElement quantity;
-
-    @FindBy(xpath = "//button[@class='quantity-plus w-icon-plus']")
-    public WebElement quantityplus;
-
-    @FindBy(xpath = "//button[@name='update_cart']")
-    public WebElement updateCart;
-
-    @FindBy(id = "payment")
-    public WebElement paymentMethod;
-
-    @FindBy(partialLinkText = "Proceed to checkout")
-    public WebElement proceedToCheckout;
-
-    @FindBy(xpath = "//*[@class='woocommerce-billing-fields__field-wrapper row gutter-sm']")
-    public WebElement billingDetails;
 
 
 
