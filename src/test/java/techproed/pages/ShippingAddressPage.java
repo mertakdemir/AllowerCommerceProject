@@ -56,6 +56,16 @@ public class ShippingAddressPage {
     @FindBy(xpath = "//div/*[text()='Edit Your Shipping Address']")
     public WebElement editShippingAddress;
 
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']")
+    public WebElement errorMessages;
+
+    @FindBy(xpath = "//i[@class='fas fa-exclamation-triangle']")
+    public WebElement errorCountryMessage;
+
+
+
+
+
 
 
 

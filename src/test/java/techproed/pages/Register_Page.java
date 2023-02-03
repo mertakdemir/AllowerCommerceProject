@@ -27,4 +27,11 @@ public class Register_Page {
     @FindBy(name = "register")
     public WebElement SignUpButton;
 
+   //========zeynep==========
+
+    @FindBy(name = "register")
+    public WebElement signUpButton;
+
+
+
 }
