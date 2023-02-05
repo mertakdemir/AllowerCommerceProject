@@ -1,9 +1,11 @@
 package techproed.tests;
 
 import com.github.javafaker.Faker;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 import techproed.pages.HomePage;
 import techproed.pages.MyAccountPage;
+import techproed.pages.StoreManagerPage;
 import techproed.utilities.*;
 
 public class US_018_TC_001 {
@@ -16,6 +18,7 @@ public class US_018_TC_001 {
 
     HomePage homePage;
     MyAccountPage myAccountPage;
+    StoreManagerPage storeManagerPage;
     Faker faker;
 
 
@@ -31,6 +34,18 @@ public class US_018_TC_001 {
         myAccountPage = new MyAccountPage();
         ReusableMethods.waitFor(2);
         JSUtils.clickElementByJS(homePage.myAccountButton);
+
+        myAccountPage.storeManagerDashboard.click();
+
+        storeManagerPage = new StoreManagerPage();
+        storeManagerPage.products.click();
+
+       // Select select = new Select(storeManagerPage.allProductTypes);
+       // select.selectByVisibleText("External/Affiliate Product");
+
+        storeManagerPage.addNewButton.click();
+        Select productDropdown = new Select(storeManagerPage.productDropdown);
+        productDropdown.selectByVisibleText("External/Affiliate Product");
 
 
     }
