@@ -3,15 +3,25 @@
     <!--        listener tag is used to add Listeners-->
     <listeners>
         <!--        Path of the Listener Utility class-->
+
         <listener class-name="techproed.utilities.Listeners">
 
         </listener>
+
+        <listener class-name="techproed.utilities.Listeners">
+
+        </listener>
+
     </listeners>
 
     <test name="Adding Shipping Address with invalid lastname" >
         <classes>
             <!--            RUNNING ListenersTest2 class-->
+
             <class name="techproed.tests.US_004_TC_006" />
+
+            <class name="techproed.tests.US_004_TC_014" />
+
         </classes>
     </test>
 </suite>
