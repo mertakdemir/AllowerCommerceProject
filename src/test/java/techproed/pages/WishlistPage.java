@@ -89,22 +89,12 @@ public class WishlistPage {
     public WebElement checkOutButton;
 
 
+    @FindBy(name = "woocommerce_checkout_place_order")
+    public WebElement placeOrderButton;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//p[text()='Thank you. Your order has been received.']")
+    public WebElement thankYouMessage;
 
 
 
