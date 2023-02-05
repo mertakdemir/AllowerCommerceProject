@@ -15,8 +15,7 @@ import techproed.utilities.ReusableMethods;
 
 import java.io.IOException;
 
-public class US_004_TC_004 {
-
+public class US_004_TC_013 {
     HomePage homePage;
     Register_Page register_page;
     MyAccountPage myAccountPage;
@@ -42,13 +41,13 @@ public class US_004_TC_004 {
     }
 
     @Test
-    public void US_004_TC_004() throws IOException {
-
+    public void US_004_TC_013() throws IOException {
         homePage = new HomePage();
         register_page = new Register_Page();
         myAccountPage = new MyAccountPage();
         shippingAddressPage = new ShippingAddressPage();
 
+        //Sign In
         register();
 
         //User clicks on My Account button
@@ -62,44 +61,39 @@ public class US_004_TC_004 {
         //User click on "Add" for shipping address
         myAccountPage.addShippingAddressButton.click();
 
-        //User enters first name
-        shippingAddressPage.firstNameInput.sendKeys(faker.name().firstName());
-        //User enters invalid Last name
-        shippingAddressPage.lastNameInput.sendKeys(faker.number().digit());
-        ReusableMethods.getScreenshot("Invalid Last name");
-        ReusableMethods.waitFor(3);
+        //User fills the required parts
 
-        Actions actions = new Actions(Driver.getDriver());
+        //User does not enter first name
+        //shippingAddressPage.firstNameInput.sendKeys(faker.name().firstName());
+        shippingAddressPage.lastNameInput.sendKeys(faker.name().lastName());
+        ReusableMethods.getScreenshot("without first name");
+        ReusableMethods.waitFor(3);
         shippingAddressPage.companyNameInput.sendKeys(faker.company().name());
+        Actions actions = new Actions(Driver.getDriver());
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(1);
         Select countryDD = new Select(shippingAddressPage.countryDropdown);
         countryDD.selectByVisibleText("South Africa");
-        ReusableMethods.waitFor(1);
         shippingAddressPage.adressHouseNumberAndStreetNameInput.sendKeys(faker.address().streetName());
-        ReusableMethods.waitFor(1);
         shippingAddressPage.addressApartmentOrSuiteInput.sendKeys(faker.address().buildingNumber());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        ReusableMethods.waitFor(3);
         shippingAddressPage.cityInput.sendKeys(faker.address().cityName());
-        ReusableMethods.waitFor(1);
         try {
             Select stateDD = new Select(shippingAddressPage.stateDropdown);
             stateDD.selectByVisibleText("Limpopo");
-        }catch (Exception ignored){
+        } catch (Exception ignored) {
 
         }
 
         shippingAddressPage.zipCodeInput.sendKeys("12345");
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);
-        ReusableMethods.waitFor(3);
 
         //Verify that user has been registered
-        Assert.assertFalse(shippingAddressPage.editYourShippingAddressText.isDisplayed());
+        Assert.assertTrue(shippingAddressPage.warningForFirstName.isDisplayed());
     }
 
-   @AfterMethod
-    public void tearDown(){
+    @AfterMethod
+    public void tearDown() {
         Driver.closeDriver();
     }
 }

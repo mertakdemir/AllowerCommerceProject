@@ -11,7 +11,7 @@
     <test name="Adding Shipping Address with invalid lastname" >
         <classes>
             <!--            RUNNING ListenersTest2 class-->
-            <class name="techproed.tests.US_004_TC_010" />
+            <class name="techproed.tests.US_004_TC_007" />
         </classes>
     </test>
 </suite>

@@ -55,6 +55,9 @@ public class HomePage {
     public WebElement password;//mdrky
     @FindBy(name = "login")
     public WebElement login;
+    @FindBy (xpath = "//div[@class='login-popup']")
+    public WebElement loginPopUp;
+
 
     }
 
