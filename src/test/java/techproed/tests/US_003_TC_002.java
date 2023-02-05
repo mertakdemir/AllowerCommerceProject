@@ -2,17 +2,24 @@ package techproed.tests;
 
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import techproed.pages.*;
+import techproed.pages.BillingAddressPage;
+import techproed.pages.HomePage;
+import techproed.pages.MyAccountPage;
+import techproed.pages.Register_Page;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
 import techproed.utilities.ReusableMethods;
 
-public class US_003_TC_001 {
+
+
+public class US_003_TC_002 {
+
 
     //User should add be able to Billing Adress.
     // (My Account > Addresses > Billing Address)
@@ -24,7 +31,8 @@ public class US_003_TC_001 {
     Faker faker;
     Register_Page registerPage;
 
-    public void register() {
+    @Test
+    public void US_003_TC_001() {
         homePage = new HomePage();
 
         faker = new Faker();
@@ -35,23 +43,24 @@ public class US_003_TC_001 {
         homePage.registerButton.click();
         registerPage.userName.sendKeys(faker.name().username());
 
-        registerPage.yourEmailAddress.sendKeys(faker.internet().emailAddress());
+        WebElement   registerEmail = registerPage.yourEmailAddress;
+        registerEmail.sendKeys(faker.internet().emailAddress());
+        String email=  registerEmail.getText();
+
         ReusableMethods.waitFor(3);
         registerPage.password.sendKeys(faker.internet().password());
         registerPage.checkBoxPolicy.click();
         registerPage.SignUpButton.click();
 
 
-    }
 
-    @Test
-    public void US_003_TC_001() {
+
+
         homePage = new HomePage();
         myAccountPage = new MyAccountPage();
         billingAddressPage = new BillingAddressPage();
 
-        //Sign In
-        register();
+
 
         //User clicks on My Account button
         JSUtils.clickElementByJS(homePage.myAccountButton);
@@ -73,8 +82,8 @@ public class US_003_TC_001 {
 
 
 
-            Select country = new Select(billingAddressPage.countryOrRegion);
-            country.selectByVisibleText(faker.address().country());
+        Select country = new Select(billingAddressPage.countryOrRegion);
+        country.selectByVisibleText(faker.address().country());
 
 
 
@@ -96,11 +105,10 @@ public class US_003_TC_001 {
         billingAddressPage.phone.sendKeys(faker.phoneNumber().phoneNumber());
 
 
-//         billingAddressPage.emailAddress.clear();
-//         billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
+//     Verify the registered email address should be filled in automatically.
 
-         JSUtils.clickElementByJS(billingAddressPage.saveAddressButton);
-
+       String billingPageEmail =  billingAddressPage.emailAddress.getText();
+        Assert.assertEquals(billingPageEmail,email);
 
 
 
