@@ -4,11 +4,9 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
-import techproed.pages.AccountDetailsPage;
-import techproed.pages.HomePage;
-import techproed.pages.MyAccountPage;
-import techproed.pages.SignInPage;
+import techproed.pages.*;
 import techproed.utilities.ConfigReader;
 import techproed.utilities.Driver;
 import techproed.utilities.JSUtils;
@@ -17,7 +15,7 @@ import techproed.utilities.ReusableMethods;
 public class US_005_TC_001 {
 
     HomePage homePage;
-    SignInPage signInPage;
+    Register_Page register_page;
     MyAccountPage myAccountPage;
     AccountDetailsPage accountDetailsPage;
     Faker faker;
@@ -26,7 +24,7 @@ public class US_005_TC_001 {
     @Test
     public void US_005_TC_001(){
         homePage = new HomePage();
-        signInPage = new SignInPage();
+        register_page = new Register_Page();
         myAccountPage = new MyAccountPage();
         accountDetailsPage = new AccountDetailsPage();
         faker= new Faker();
@@ -35,12 +33,12 @@ public class US_005_TC_001 {
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
         homePage.registerButton.click();
-        signInPage.username.sendKeys(faker.name().username());
-        signInPage.email.sendKeys(faker.internet().emailAddress());
+        register_page.userName.sendKeys(faker.name().username());
+        register_page.yourEmailAddress.sendKeys(faker.internet().emailAddress());
         String password = faker.internet().password();
-        signInPage.password.sendKeys(password);
-        signInPage.agreeThePolicy.click();
-        signInPage.signUpButton.click();
+        register_page.password.sendKeys(password);
+        register_page.checkBoxPolicy.click();
+        register_page.SignUpButton.click();
 
 
         //User clicks on My Account Details Button
@@ -55,6 +53,7 @@ public class US_005_TC_001 {
         //First name, Last name, Display name ve Email address should be editable.
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
+        ReusableMethods.waitFor(3);
 
         accountDetailsPage.accountFirstName.sendKeys(faker.name().firstName());
         Assert.assertTrue(accountDetailsPage.accountFirstName.isEnabled());
@@ -85,4 +84,9 @@ public class US_005_TC_001 {
 
 
     }
+    @AfterMethod
+    public void tearDown(){
+        Driver.closeDriver();
+    }
+
 }

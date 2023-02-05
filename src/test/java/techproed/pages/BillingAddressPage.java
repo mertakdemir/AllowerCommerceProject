@@ -63,4 +63,20 @@ public class BillingAddressPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+    @FindBy(id = "billing_country")
+    public WebElement getCountryOrRegion2;
+
+    @FindBy(id = "select2-billing_state-container")
+    public WebElement province1;
+
 }
