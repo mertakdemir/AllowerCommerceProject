@@ -35,8 +35,28 @@ public class VendorSignUpPage {
     @FindBy(xpath = "//*[ text() = 'This Email already exists. Please login to the site and apply as vendor.']")
     public WebElement errorMessage;
 
+<<<<<<< HEAD
 //=========================zeynep===========
     @FindBy(xpath = "//a[.='Signup as a vendor?']")
     public WebElement signupVendorLink;
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+   @FindBy(id = "password_strength")
+    public WebElement chartLevel;
+
+
+>>>>>>> refs/remotes/origin/master
 
 }
