@@ -27,15 +27,12 @@ public class Register_Page {
     @FindBy(name = "register")
     public WebElement SignUpButton;
 
-<<<<<<< HEAD
-   //========zeynep==========
+
 
     @FindBy(name = "register")
     public WebElement signUpButton;
-=======
 
 
->>>>>>> refs/remotes/origin/master
 
 
 

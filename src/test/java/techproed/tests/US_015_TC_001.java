@@ -1,5 +1,6 @@
 package techproed.tests;
 
+import com.github.javafaker.Faker;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -25,6 +26,8 @@ import java.util.List;
 
 
 public class US_015_TC_001 {
+    Faker faker=new Faker()   ;
+
 
     HomePage homePage;
     SignInPage signInPage;
@@ -135,6 +138,9 @@ vendorProductPage.insertIntoPost2.click();
 
 @Test
 public void  test02() throws IOException {
+    Faker faker=new Faker()   ;
+    Number num=faker.number().numberBetween(1,100);
+    String stockQty=num.toString();
     test01();
 
     JSUtils.scrollIntoViewJS(vendorProductPage.inventory);
@@ -147,7 +153,7 @@ vendorProductPage.sku.sendKeys("Per Item");
   ReusableMethods.selectCheckBox(vendorProductPage.manageStockCheck,true);
     ReusableMethods.waitFor(3);
 
-vendorProductPage.stockQuantity.sendKeys("10");
+vendorProductPage.stockQuantity.sendKeys(stockQty);
 Select backorders=new Select(vendorProductPage.backOrders);
 
 backorders.selectByIndex(2);
@@ -156,13 +162,22 @@ JSUtils.clickElementByJS(vendorProductPage.soldIndividually);
 
 vendorProductPage.submit.click();
 String assertStockQuantity=vendorProductPage.stockQuantity.getText();
-    boolean assertStock=assertStockQuantity.equals("100");
+    boolean assertStock=assertStockQuantity.equals(num);
     if (assertStock==false){
         System.out.println("STOCK QUANTITY AND SENT VALUE ARE NOT SAME");
         ReusableMethods.getScreenshot("StockQuantityMistake");
     }
 
+
 }
+    @Test
+    public void test03() {
+       // test01();
+
+
+        System.out.println(num);
+
+    }
     @AfterTest
     public void tearDown() {
 //Driver.getDriver().close();
