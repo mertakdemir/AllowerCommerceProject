@@ -172,10 +172,8 @@ String assertStockQuantity=vendorProductPage.stockQuantity.getText();
 }
     @Test
     public void test03() {
-       // test01();
+       test01();
 
-
-        System.out.println(num);
 
     }
     @AfterTest
