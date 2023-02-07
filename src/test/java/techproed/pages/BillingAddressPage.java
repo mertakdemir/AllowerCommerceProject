@@ -19,9 +19,13 @@ public class BillingAddressPage {
 
     @FindBy(xpath = "//input[@id='billing_last_name']")
     public WebElement lastName;
+////*[@id='billing_country']
+//    @FindBy(xpath = "(//*[text()='Select a country / region…'])[1]")
+//    public WebElement countryOrRegion;
 
-    @FindBy(xpath = "(//*[text()='Select a country / region…'])[2]")
-    public WebElement countryOrRegion;
+    @FindBy(id = "billing_country")
+  public WebElement countryOrRegion;
+
 
 
     @FindBy(xpath = "//input[@id='billing_address_1']")
@@ -33,10 +37,10 @@ public class BillingAddressPage {
     public WebElement townOrCity;
 
 
-    @FindBy(xpath = "//span[@id='select2-billing_state-container']")
+    @FindBy(id= "billing_state")
     public WebElement stateOrCountry;
 
-
+//"//span[@id='select2-billing_state-container']"
 
     @FindBy(xpath = "//input[@id='billing_postcode']")
     public WebElement postcodeOrZipCode;
@@ -58,5 +62,21 @@ public class BillingAddressPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+    @FindBy(id = "billing_country")
+    public WebElement getCountryOrRegion2;
+
+    @FindBy(id = "select2-billing_state-container")
+    public WebElement province1;
 
 }

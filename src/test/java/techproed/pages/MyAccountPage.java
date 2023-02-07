@@ -11,7 +11,8 @@ import techproed.utilities.Driver;
 
 import java.util.List;
 
-public class MyAccountPage {
+public class
+MyAccountPage {
 
 
 
@@ -75,5 +76,8 @@ public class MyAccountPage {
 
     @FindBy(xpath = "//a[.='Logout']")
     public WebElement logoutDashboard;
+
+    @FindBy(xpath = "//*[.='Sign Out']")
+    public WebElement signOutButton;
 
 }

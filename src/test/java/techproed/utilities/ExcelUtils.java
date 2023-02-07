@@ -11,7 +11,7 @@ public class ExcelUtils {
     private Workbook workBook;
     private Sheet workSheet;
     private String path;
-    public ExcelUtils(String path, String sheetName) {//This Constructor is to open and access the excel file
+    public ExcelUtils(String path, String sheetName) {//This Constructor is to open and access the Excel file
         this.path = path;
         try {
             // Opening the Excel file
@@ -26,7 +26,7 @@ public class ExcelUtils {
             throw new RuntimeException(e);
         }
     }
-    //This will get the list of the data in the excel file
+    //This will get the list of the data in the Excel file
     //This is a list of map of string. This takes the data as string and will return the data as a Map of String
     public List<Map<String, String>> getDataList() {
         // getting all columns
@@ -109,7 +109,7 @@ public class ExcelUtils {
         int column = getColumnsNames().indexOf(columnName);
         setCellData(value, row, column);
     }
-    //this method will return data table as 2d array
+    //this method will return data table as 2d array,
     //so we need this format because of data provider.
     public String[][] getDataArrayWithoutFirstRow() {
         String[][] data = new String[rowCount()-1][columnCount()];
