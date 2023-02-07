@@ -22,23 +22,7 @@ public class VendorHomePage {
 
     @FindBy (xpath ="//*[@id='wcfm_menu']/div[5]")
     public WebElement products;
-    @FindBy(xpath = "//*[@id='add_new_product_dashboard']/span[2]")
-    public WebElement addNew;
-    @FindBy(xpath = "//*[.='Inventory']")
-    public WebElement inventory;
-    @FindBy(xpath = "//*[.='Shipping']")
-    public WebElement shipping;
-    @FindBy(xpath = "//*[.='Attributes']")
-    public WebElement attributes;
-    @FindBy(xpath = "//*[.='Linked']")
-    public WebElement linked;
-    @FindBy(xpath = "//*[@id='wcfm_products_manage_form_yoast_head']")
-    public WebElement seo;
-@FindBy (xpath = "//*[.='Toptan Ürün Gösterme Ayarları']")
-    public WebElement wholeProductDisplay;
 
-@FindBy (xpath = "//*[.='Advanced']")
-    public WebElement advanced;
 
 
 }
