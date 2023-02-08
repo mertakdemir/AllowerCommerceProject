@@ -2,8 +2,15 @@
 <suite name="Allower Commerce" verbose="1">
     <!--        listener tag is used to add Listeners-->
     <listeners>
-        <!--        Path of the Listener Utility class-->
-        <listener class-name="techproed.utilities.Listeners"></listener>
+
+        <listener class-name="techproed.utilities.Listeners">
+
+        </listener>
+
+        <listener class-name="techproed.utilities.Listeners">
+
+        </listener>
+
     </listeners>
 
     <test name="Adding Shipping Address with invalid lastname" >

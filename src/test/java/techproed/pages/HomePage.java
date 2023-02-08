@@ -3,6 +3,7 @@ package techproed.pages;
 
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 
 import org.openqa.selenium.WebDriver;
@@ -30,23 +31,8 @@ public class HomePage {
     @FindBy(xpath = "//span[.='Sign In']")
     public WebElement signInButton1;
 
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//input[@aria-label='Search']")
     public WebElement searchBox;
-
-
-
-
-
-
-
 
 
     @FindBy(xpath = "//span[.='Register']")
@@ -56,22 +42,14 @@ public class HomePage {
     public WebElement myAccountButton;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     @FindBy(xpath = "//*[text()='Sign Out']")
     public WebElement signOut;
+
+
+
+
+    @FindBy (xpath = "//div[@class='login-popup']")
+    public WebElement loginPopUp;
 
 
     }
