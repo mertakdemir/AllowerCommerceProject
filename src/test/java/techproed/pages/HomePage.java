@@ -73,6 +73,11 @@ public class HomePage {
     @FindBy(xpath = "//*[text()='Sign Out']")
     public WebElement signOut;
 
+    @FindBy(xpath = "//div[@data-id='0ceec07']")
+    public WebElement homeLogo;
+
+
+    //div[@data-id='0ceec07']
 
     }
 
