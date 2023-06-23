@@ -41,7 +41,7 @@ public class US_006_TC_002 {
    //If the user cannot find the product they want, they should be able to see a message that the product is not found.
        Assert.assertTrue(productPage.noProductMessage.isDisplayed());
 
-       Driver.closeDriver();
+      // Driver.closeDriver();
 
    }
 
