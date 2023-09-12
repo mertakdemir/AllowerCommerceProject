@@ -38,8 +38,6 @@ public WebElement addNew;
  @FindBy(xpath = "//button[@id='insert-media-button'][@data-editor='excerpt']")
  public WebElement shortDescriptionAddMedia;
 
-
-
 //IFRAMES
 @FindBy(id = "excerpt_ifr")
 public WebElement iframe1;
@@ -77,7 +75,6 @@ public WebElement addDescriptionMedia;
     //CATEGORIES
 @FindBy (xpath = "//*[@name='product_cats[]']")
     public List<WebElement> checkBoxItems;
-
 
 @FindBy (xpath= "//div[@class='wcfm_product_manager_cats_checklist_fields']")
     public WebElement checkBoxFields;

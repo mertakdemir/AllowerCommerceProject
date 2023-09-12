@@ -77,8 +77,6 @@ public class WishlistPage {
     @FindBy(xpath = "(//a[@class='btn btn-dark btn-rounded btn-sm add_to_cart alt'])[2]")
     public WebElement kadinTrikoAddToCart;
 
-
-
     @FindBy(xpath = "(//a[@class='btn btn-dark btn-rounded btn-sm add_to_cart alt'])[1]")
     public WebElement mensClothingAddToCart;
 
@@ -87,25 +85,4 @@ public class WishlistPage {
 
     @FindBy(xpath = "//a[@class='button checkout wc-forward']")
     public WebElement checkOutButton;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

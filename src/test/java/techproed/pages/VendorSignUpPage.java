@@ -39,21 +39,6 @@ public class VendorSignUpPage {
     @FindBy(xpath = "//a[.='Signup as a vendor?']")
     public WebElement signupVendorLink;
 
-
-
-
-
-
-
-
-
-
-
-
-
    @FindBy(id = "password_strength")
     public WebElement chartLevel;
-
-
-
 }

@@ -21,10 +21,4 @@ public class StoreManagerPage {
 
     @FindBy(id = "product_type")
     public WebElement productDropdown;
-
-
-
-
-
-
 }

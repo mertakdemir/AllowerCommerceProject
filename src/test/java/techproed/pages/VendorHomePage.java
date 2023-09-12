@@ -22,7 +22,4 @@ public class VendorHomePage {
 
     @FindBy (xpath ="//*[@id='wcfm_menu']/div[5]")
     public WebElement products;
-
-
-
 }

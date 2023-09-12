@@ -61,16 +61,7 @@ public class ShippingAddressPage {
     @FindBy(xpath = "//li[@data-id='shipping_postcode']")
     public WebElement warningForZipCode;
 
-
-
-
-
-
-
-
-
     //=============zeynep=============
-
 
     @FindBy(xpath = "(//input[@type='text'])[7]")
     public WebElement stateInput;
@@ -83,15 +74,4 @@ public class ShippingAddressPage {
 
     @FindBy(xpath = "//i[@class='fas fa-exclamation-triangle']")
     public WebElement errorCountryMessage;
-
-
-
-
-
-
-
-
-
-
-
 }

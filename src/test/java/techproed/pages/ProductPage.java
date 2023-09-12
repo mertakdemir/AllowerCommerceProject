@@ -10,7 +10,6 @@ public class ProductPage {
 
         PageFactory.initElements(Driver.getDriver(), this);
     }
-
     @FindBy(xpath = "//button[@class='single_add_to_cart_button button alt']")
     public WebElement addToCart;
 
@@ -22,10 +21,4 @@ public class ProductPage {
 
     @FindBy(xpath = "//li[@class='no-product']")
     public WebElement noProductMessage;
-
-
-
-
-
-
 }

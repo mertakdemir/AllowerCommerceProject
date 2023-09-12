@@ -39,6 +39,4 @@ public class AccountDetailsPage {
 
     @FindBy(name = "save_account_details")
     public WebElement saveChangesButton;
-
-
 }
