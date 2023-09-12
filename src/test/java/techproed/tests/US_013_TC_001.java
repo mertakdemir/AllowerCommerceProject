@@ -25,7 +25,6 @@ public class US_013_TC_001 {
     ShippingAddressPage shippingAddressPage;
     Faker faker = new Faker();
 
-
     @Test
 
     public void US_013_TC_001() throws IOException {
@@ -50,8 +49,6 @@ public class US_013_TC_001 {
         AllowerMethods.editShippingAddress();
         AllowerMethods.shippingAddress();
 
-
         Driver.closeDriver();
     }
-
 }

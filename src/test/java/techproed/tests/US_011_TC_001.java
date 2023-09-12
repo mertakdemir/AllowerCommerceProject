@@ -75,14 +75,9 @@ public class US_011_TC_001 {
         actions.sendKeys(Keys.ARROW_DOWN).perform();
         ReusableMethods.getScreenshot("The requirements are displayed");
         ReusableMethods.waitFor(2);
-
-
     }
-
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();
     }
-
-
 }

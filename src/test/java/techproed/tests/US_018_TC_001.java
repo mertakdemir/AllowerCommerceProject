@@ -12,7 +12,7 @@ public class US_018_TC_001 {
 
 /*
     External - Affiliate Product should be selectable.
-    User should be able fill in URL, Button Text, Price, Sale Price.
+    User should be able to fill in URL, Button Text, Price, Sale Price.
     The steps of US14 and US15 should be done succesfully.
 */
 
@@ -46,7 +46,5 @@ public class US_018_TC_001 {
         storeManagerPage.addNewButton.click();
         Select productDropdown = new Select(storeManagerPage.productDropdown);
         productDropdown.selectByVisibleText("External/Affiliate Product");
-
-
     }
 }

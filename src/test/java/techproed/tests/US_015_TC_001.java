@@ -27,8 +27,6 @@ import java.util.List;
 
 public class US_015_TC_001 {
     Faker faker=new Faker()   ;
-
-
     HomePage homePage;
     SignInPage signInPage;
     LoginPage loginPage;
@@ -130,11 +128,7 @@ vendorProductPage.insertIntoPost2.click();
     JSUtils.scrollIntoViewJS(vendorProductPage.electronics);
     ReusableMethods.waitFor(4);
     vendorProductPage.electronics.click();
-
-
     }
-
-
 
 @Test
 public void  test02() throws IOException {
@@ -167,18 +161,13 @@ String assertStockQuantity=vendorProductPage.stockQuantity.getText();
         System.out.println("STOCK QUANTITY AND SENT VALUE ARE NOT SAME");
         ReusableMethods.getScreenshot("StockQuantityMistake");
     }
-
-
 }
     @Test
     public void test03() {
        test01();
-
-
     }
     @AfterTest
     public void tearDown() {
 //Driver.getDriver().close();
     }
-
 }

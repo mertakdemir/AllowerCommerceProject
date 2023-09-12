@@ -21,29 +21,25 @@ public class US_010_TC_001 {
     @Test
     public void US_010_TC_001(){
         faker = new Faker();
-//      Vender goes to Vender Registration page
+//      Vendor goes to Vendor Registration page
         Driver.getDriver().get(ConfigReader.getProperty("vendor_registration_url"));
 
-//      Vender uses few characters in his  passport, "Too short" should be seen on the screen.
+//      Vendor uses few characters in his  password, "Too short" should be seen on the screen.
         JSUtils.scrollIntoViewJS(signUpPage.passwordInput);
         signUpPage.passwordInput.sendKeys(faker.internet().password(1,2));
         Assert.assertEquals("Too short",signUpPage.chartLevel.getText());
-
-
     }
 
     @Test
     public void US_010_TC_002(){
         faker = new Faker();
-//      User goes to Vender Registration page
+//      User goes to Vendor Registration page
         Driver.getDriver().get(ConfigReader.getProperty("vendor_registration_url"));
 
-//      Vender not using short and different characters in vender's passport, "weak" should be seen on the screen.
+//      Vendor not using short and different characters in vendor's password, "weak" should be seen on the screen.
         JSUtils.scrollIntoViewJS(signUpPage.passwordInput);
         signUpPage.passwordInput.sendKeys(faker.internet().password(6,7));
         Assert.assertEquals("Weak",signUpPage.chartLevel.getText());
-
-
     }
 
     @Test
@@ -58,8 +54,6 @@ public class US_010_TC_001 {
         JSUtils.scrollIntoViewJS(signUpPage.passwordInput);
         signUpPage.passwordInput.sendKeys(faker.internet().password());
         Assert.assertEquals("Good",signUpPage.chartLevel.getText());
-
-
     }
     @Test
     public void US_010_TC_004(){
@@ -71,7 +65,5 @@ public class US_010_TC_001 {
         JSUtils.scrollIntoViewJS(signUpPage.passwordInput);
         signUpPage.passwordInput.sendKeys(faker.internet().password(6,9,true,true));
         Assert.assertEquals("Strong",signUpPage.chartLevel.getText());
-
-
     }
 }

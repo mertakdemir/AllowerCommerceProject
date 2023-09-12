@@ -93,8 +93,5 @@ public class US_012_TC_001 {
         //After clicking 'Save Address', the Billing Address should be added.
         JSUtils.clickElementByJS(billingAddressPage.saveAddressButton);
         Assert.assertTrue(billingAddressPage.editYourBillingAddress.isDisplayed());
-
-
-
     }
 }
