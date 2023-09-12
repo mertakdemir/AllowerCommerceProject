@@ -13,10 +13,6 @@ import static techproed.utilities.JSUtils.scrollIntoViewJS;
 
 public class US_009_TC_001 extends VendorSignUpPage {
     VendorSignUpPage signUpPage=new VendorSignUpPage();
-
-
-
-
     @Test
     public void signUpTest(){
         Driver.getDriver().get(ConfigReader.getProperty("vendor_signup_url"));
@@ -31,7 +27,5 @@ public class US_009_TC_001 extends VendorSignUpPage {
         signUpPage.confirmPwdInput.sendKeys("12345Alti@");
         signUpPage.registerButton.click();
         Assert.assertTrue(signUpPage.errorMessage.isDisplayed());
-
-
     }
 }

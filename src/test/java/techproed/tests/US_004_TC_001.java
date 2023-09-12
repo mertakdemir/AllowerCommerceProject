@@ -17,19 +17,15 @@ import techproed.utilities.ReusableMethods;
 public class US_004_TC_001 {
     //User should add be able to Shipping Adress.
     // (My Account > Addresses > Shipping Address)
-
     HomePage homePage;
     Register_Page register_page;
     MyAccountPage myAccountPage;
     ShippingAddressPage shippingAddressPage;
     Faker faker;
-
-
     public void register(){
         homePage = new HomePage();
         register_page = new Register_Page();
         faker = new Faker();
-
         //User goes to home page
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
@@ -39,9 +35,7 @@ public class US_004_TC_001 {
         register_page.password.sendKeys(faker.internet().password());
         register_page.checkBoxPolicy.click();
         register_page.SignUpButton.click();
-
     }
-
     @Test
     public void US_004_TC_001(){
         homePage = new HomePage();
@@ -88,14 +82,10 @@ public class US_004_TC_001 {
 
         //Verify that user has been registered
         Assert.assertTrue(shippingAddressPage.editYourShippingAddressText.isDisplayed());
-
-
     }
 
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();
     }
-
-
 }

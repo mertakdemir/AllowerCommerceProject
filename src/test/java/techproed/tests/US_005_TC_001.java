@@ -20,7 +20,6 @@ public class US_005_TC_001 {
     AccountDetailsPage accountDetailsPage;
     Faker faker;
 
-
     @Test
     public void US_005_TC_001(){
         homePage = new HomePage();
@@ -79,14 +78,9 @@ public class US_005_TC_001 {
         ReusableMethods.waitFor(1);
 
         JSUtils.clickElementByJS(accountDetailsPage.saveChangesButton);
-
-
-
-
     }
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();
     }
-
 }

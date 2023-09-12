@@ -107,11 +107,7 @@ public class US_006_TC_001 {
    // The user should be able to complete their purchase.
 
       Assert.assertTrue(checkoutPage.thankyouMessage.isDisplayed());
-
-
-
        Driver.closeDriver();
 
    }
-
 }

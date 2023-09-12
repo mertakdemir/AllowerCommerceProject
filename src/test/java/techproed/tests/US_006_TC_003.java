@@ -63,8 +63,6 @@ public class US_006_TC_003 {
    // The user should be able to add the product they are looking for to their cart. (ADD TO CART)
        productPage.addToCart.click();
 
-
-
    // User should see the items that have been added to the cart.
        String message = productPage.addToCartMessage.getText();
        System.out.println("message = " + message);
@@ -124,5 +122,4 @@ public class US_006_TC_003 {
 
       Driver.closeDriver();
    }
-
 }

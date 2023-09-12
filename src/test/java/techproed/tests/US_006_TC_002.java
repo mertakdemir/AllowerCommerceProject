@@ -42,7 +42,5 @@ public class US_006_TC_002 {
        Assert.assertTrue(productPage.noProductMessage.isDisplayed());
 
        Driver.closeDriver();
-
    }
-
 }

@@ -23,7 +23,6 @@ public class US_004_TC_006 {
     ShippingAddressPage shippingAddressPage;
     Faker faker;
 
-
     public void register(){
         homePage = new HomePage();
         register_page = new Register_Page();
@@ -40,7 +39,6 @@ public class US_004_TC_006 {
         register_page.SignUpButton.click();
 
     }
-
     @Test
     public void US_004_TC_006() throws IOException {
 

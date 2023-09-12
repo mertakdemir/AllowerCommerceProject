@@ -114,11 +114,5 @@ public class US_008_TC_001 {
         JSUtils.clickElementByJS(wishlistPage.addToCartIcon);
         ReusableMethods.waitFor(5);
         JSUtils.clickElementByJS(wishlistPage.checkOutButton);
-
-
-
-
-
-
     }
 }

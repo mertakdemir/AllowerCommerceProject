@@ -90,10 +90,7 @@ public class US_004_TC_003 {
 
         //Verify that user has been registered
         Assert.assertFalse(shippingAddressPage.editYourShippingAddressText.isDisplayed());
-
-
     }
-
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();

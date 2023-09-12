@@ -23,7 +23,6 @@ public class US_004_TC_004 {
     ShippingAddressPage shippingAddressPage;
     Faker faker;
 
-
     public void register(){
         homePage = new HomePage();
         register_page = new Register_Page();
@@ -38,7 +37,6 @@ public class US_004_TC_004 {
         register_page.password.sendKeys(faker.internet().password());
         register_page.checkBoxPolicy.click();
         register_page.SignUpButton.click();
-
     }
 
     @Test
@@ -88,7 +86,6 @@ public class US_004_TC_004 {
         }catch (Exception ignored){
 
         }
-
         shippingAddressPage.zipCodeInput.sendKeys("12345");
         ReusableMethods.waitFor(1);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);

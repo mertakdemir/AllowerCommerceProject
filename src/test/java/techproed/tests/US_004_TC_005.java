@@ -16,14 +16,11 @@ import techproed.utilities.ReusableMethods;
 import java.io.IOException;
 
 public class US_004_TC_005 {
-
     HomePage homePage;
     Register_Page register_page;
     MyAccountPage myAccountPage;
     ShippingAddressPage shippingAddressPage;
     Faker faker;
-
-
     public void register(){
         homePage = new HomePage();
         register_page = new Register_Page();
@@ -38,7 +35,6 @@ public class US_004_TC_005 {
         register_page.password.sendKeys(faker.internet().password());
         register_page.checkBoxPolicy.click();
         register_page.SignUpButton.click();
-
     }
 
     @Test
@@ -86,18 +82,14 @@ public class US_004_TC_005 {
             Select stateDD = new Select(shippingAddressPage.stateDropdown);
             stateDD.selectByVisibleText("Limpopo");
         }catch (Exception ignored){
-
         }
-
         shippingAddressPage.zipCodeInput.sendKeys("12345");
         ReusableMethods.waitFor(1);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);
         ReusableMethods.waitFor(3);
-
         //Verify that user has been registered
         Assert.assertFalse(shippingAddressPage.editYourShippingAddressText.isDisplayed());
     }
-
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();

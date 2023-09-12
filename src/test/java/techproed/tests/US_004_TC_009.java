@@ -89,8 +89,6 @@ public class US_004_TC_009 {
         }catch (Exception ignored){
 
         }
-
-
         shippingAddressPage.zipCodeInput.sendKeys("12345");
         ReusableMethods.waitFor(1);
         JSUtils.clickElementByJS(shippingAddressPage.saveAddressButton);
