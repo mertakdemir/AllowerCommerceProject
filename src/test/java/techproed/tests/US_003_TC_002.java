@@ -52,15 +52,9 @@ public class US_003_TC_002 {
         registerPage.checkBoxPolicy.click();
         registerPage.SignUpButton.click();
 
-
-
-
-
         homePage = new HomePage();
         myAccountPage = new MyAccountPage();
         billingAddressPage = new BillingAddressPage();
-
-
 
         //User clicks on My Account button
         JSUtils.clickElementByJS(homePage.myAccountButton);
@@ -74,19 +68,12 @@ public class US_003_TC_002 {
         //User click on "Add" for billing address
         myAccountPage.addBillingAddress.sendKeys(Keys.ENTER);
 
-
         //User fills the required parts
         billingAddressPage.firstName.sendKeys(faker.address().firstName());
         billingAddressPage.lastName.sendKeys(faker.address().lastName());
 
-
-
-
         Select country = new Select(billingAddressPage.countryOrRegion);
         country.selectByVisibleText(faker.address().country());
-
-
-
 
         billingAddressPage.streetAddress.sendKeys(faker.address().streetAddress());
         billingAddressPage.townOrCity.sendKeys(faker.address().city());
@@ -100,7 +87,6 @@ public class US_003_TC_002 {
 
         }
 
-
         billingAddressPage.postcodeOrZipCode.sendKeys(faker.address().zipCode());
         billingAddressPage.phone.sendKeys(faker.phoneNumber().phoneNumber());
 
@@ -109,10 +95,6 @@ public class US_003_TC_002 {
 
        String billingPageEmail =  billingAddressPage.emailAddress.getText();
         Assert.assertEquals(billingPageEmail,email);
-
-
-
-
     }
 
     @AfterMethod

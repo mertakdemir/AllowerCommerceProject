@@ -16,8 +16,6 @@ public class US_003_TC_001 {
 
     //User should add be able to Billing Adress.
     // (My Account > Addresses > Billing Address)
-
-
     HomePage homePage;
     MyAccountPage myAccountPage;
     BillingAddressPage billingAddressPage;
@@ -40,8 +38,6 @@ public class US_003_TC_001 {
         registerPage.password.sendKeys(faker.internet().password());
         registerPage.checkBoxPolicy.click();
         registerPage.SignUpButton.click();
-
-
     }
 
     @Test
@@ -65,19 +61,12 @@ public class US_003_TC_001 {
         //User click on "Add" for billing address
         myAccountPage.addBillingAddress.sendKeys(Keys.ENTER);
 
-
         //User fills the required parts
         billingAddressPage.firstName.sendKeys(faker.address().firstName());
         billingAddressPage.lastName.sendKeys(faker.address().lastName());
 
-
-
-
-            Select country = new Select(billingAddressPage.countryOrRegion);
-            country.selectByVisibleText(faker.address().country());
-
-
-
+        Select country = new Select(billingAddressPage.countryOrRegion);
+        country.selectByVisibleText(faker.address().country());
 
         billingAddressPage.streetAddress.sendKeys(faker.address().streetAddress());
         billingAddressPage.townOrCity.sendKeys(faker.address().city());
@@ -91,25 +80,16 @@ public class US_003_TC_001 {
 
         }
 
-
         billingAddressPage.postcodeOrZipCode.sendKeys(faker.address().zipCode());
         billingAddressPage.phone.sendKeys(faker.phoneNumber().phoneNumber());
-
-
 //         billingAddressPage.emailAddress.clear();
 //         billingAddressPage.emailAddress.sendKeys(faker.internet().emailAddress());
 
          JSUtils.clickElementByJS(billingAddressPage.saveAddressButton);
-
-
-
-
-
     }
 
     @AfterMethod
     public void tearDown(){
         Driver.closeDriver();
     }
-
 }

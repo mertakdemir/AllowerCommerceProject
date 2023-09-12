@@ -44,7 +44,5 @@ public class US_001_TC_002 {
         register_page.SignUpButton.click();
         ReusableMethods.getScreenshot("user could sign up with clicking policy check box" + register_page.SignUpButton);
         Assert.assertTrue(myAccountPage.signOutButton.isDisplayed());
-
-
     }
 }

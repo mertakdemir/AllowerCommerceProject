@@ -19,7 +19,6 @@ US_001_TC_001 {
     @Test
     public void US_001_TC_001_Register_Page_Test() throws IOException {
 
-
     //User should go to https://www.allovercommerce.com/
         Driver.getDriver().get(ConfigReader.getProperty("url_allovercommerce"));
 
@@ -39,7 +38,5 @@ US_001_TC_001 {
         ReusableMethods.waitFor(2);
         register_page.SignUpButton.click();
         ReusableMethods.getScreenshot("user could not sign up without clicking policy check box" + register_page.SignUpButton);
-
-
 }
 }

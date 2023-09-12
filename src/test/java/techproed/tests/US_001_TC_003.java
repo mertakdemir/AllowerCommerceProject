@@ -43,8 +43,6 @@ public class US_001_TC_003 {
         ReusableMethods.waitFor(2);
         register_page.checkBoxPolicy.click();
         register_page.SignUpButton.click();
-
-
     }
     }
 
